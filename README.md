@@ -1,2 +1,2 @@
-# Firstshiny
-Shiny Project files
+# ShinyProject
+RStudio files for Shiny Project
