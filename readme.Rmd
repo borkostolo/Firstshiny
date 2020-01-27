@@ -13,45 +13,35 @@ After travelling around the world, I arrived to the USA. I liked it here and dec
 Outside of the office I like to spend my time with reading, cooking, running and backpacking to remote places. 
 
 
-For my professinal experience, please visit my linkedIn page:
-<https://www.linkedin.com/in/karoly-lajko-18906b6/>.
+For my professinal experience, please visit my linkedIn [page](https://www.linkedin.com/in/karoly-lajko-18906b6/)
 
 
-### About the Project
+## About the Project
 Any time I travel I enjoy observing cultures, traditions and  social habbits. Also, pay attention to what nations eat, drink and how healthy they are. 
 **Cancer** is one of the main causes of death across the globe. 
 There are many researches, experiments ongoing in this field that takes years to see
 what is causing cancer to develop in the human body. 
-
-<https://www.who.int/cancer/PRGlobocanFinal.pdf>.
-
-
-<span style="color:blue">some *More to add here.* text</span>
+The project shows various cancer rates of countries. 
+It also visualizes on maps global food consumption vs cancer rates of the countries.
+The question is: `Is there a relationship between what people eat and cancer development?`
 
 
-# My Data Source
-
-Foobar is a Python library for dealing with word pluralization.
-
-## The Shiny App content
+[<span style="color:blue"> General information on Cancer </span>](https://www.who.int/cancer/PRGlobocanFinal.pdf)
 
 
-## Tabs
+## My Data Source
+
+I choose my dataset from the OMCD  website:
+[DATASET](https://stats.oecd.org//)
+
+## The Shiny App content 
+The following tabs are generated:
 - Bar Chart
 - Graph
 - Table
 - Readme
 
-## Examples
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-
 ## Future Plans
-
-You can also embed plots, for example:
-![alt text](https://cdn.searchenginejournal.com/wp-content/uploads/2019/07/marketing-ai-key-takeaways-you-need-to-know.png=100x20 " AI Image")
 
 
 Note that this page is  `UNDER DEVELOPMENT` and plan to update it continuously as my data science and coding skills improve. 

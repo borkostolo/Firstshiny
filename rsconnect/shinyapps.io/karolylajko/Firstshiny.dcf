@@ -1,0 +1,13 @@
+name: Firstshiny
+title: Firstshiny
+username:
+account: karolylajko
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1706404
+bundleId: 2754811
+url: https://karolylajko.shinyapps.io/Firstshiny/
+when: 1580080922.84013
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: CauseOfDeath.csv

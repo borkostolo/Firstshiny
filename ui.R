@@ -66,11 +66,14 @@ shinyUI <- dashboardPage(skin = 'red',
                                # infoBoxOutput("box12"),
                             infoBoxOutput("box13") 
                                 ),
+                             h4("Cancer Rates of Countries for given year"),
+                            
                               fluidRow(
                               #  infoBoxOutput("box11"),   infoBoxOutput("box13"), 
                                 box(htmlOutput("map" ), height = "auto", width = "auto")
                                 ),
                               fluidRow(
+                                h4("   Food Consumption of Coutries"),
                                 column(4,selectizeInput("YearSel","Select Year to Display", year_sel)),
                                 column(6,selectizeInput("FoodSel","Select Food to Display", food_sel)),
                               box(htmlOutput("food" ), height = "auto", width = "auto")

@@ -5,22 +5,22 @@ library(plotly)
 library(ggplot2)
 library(DT)
 library(googleVis)
+library(rsconnect)
 
 # CANCER DATA 
 # Reading in the first file .csv
 CancerData <- read.csv(file = "MalignantNeoplasm.csv")
-CauseOfDeath <- read.csv(file = "CauseOfDeath.csv")
+#CauseOfDeath <- read.csv(file = "CauseOfDeath.csv")
 cdata = CancerData  %>% select(.,-VAR,-UNIT,-COU,-YEA,-Flag.Codes,-Flags) 
 country_stat <- data.frame(CancerData)
 
 # create variable with colnames as choice 
-year_sel <- distinct(fdata["Year"])
+
 
 # FOOD CONSUMPTION
-FoodData <- read.csv(file = "FoodConsumption.csv")
-fdata = FoodData
+fdata = read.csv(file = "FoodConsumption.csv")
 fdata = fdata %>% select(-VAR,-UNIT, -COU, -YEA, -Flag.Codes, -Flags)
-
+year_sel <- distinct(fdata["Year"])
 # Fat per year
 #fdata %>% select(-VAR,-UNIT, -COU, -YEA, -Flag.Codes, -Flags) %>% group_by(Country) %>% filter(Country == "Hungary")
 # Separate data and rearrage into columns per ycountry per year

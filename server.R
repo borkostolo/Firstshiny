@@ -7,7 +7,8 @@ shinyServer<- function(input, output) {
       filter(.,input$year==Year) %>% filter(.,input$country == Country) %>% filter(.,input$measure == Measure) 
   })
   output$cancer <- renderPlot({
-    ggplot(data= toprate(), aes(x = Variable, y=Value)) + geom_col(aes(fill=Value)) + coord_flip()
+    ggplot(data= toprate(), aes(x = Variable, y=Value)) + geom_col(aes(fill=Value)) + coord_flip() + 
+      xlab("Type of Cancer") + ylab("Frequency of the Cancer") + ggtitle("Cancer Types vs Frequency Chart")
   }) 
   # TAB 2 
   cancerrate = reactive({
@@ -17,11 +18,6 @@ shinyServer<- function(input, output) {
       summarize(., TotalPerYear = sum(Value), Highest = max(Value))
   })
 
-  cancerrate2 = reactive({
-    cancerrate2 = cdata %>% group_by(Country, Year, Variable) %>% filter(Variable!= "Malignant neoplasms") %>% 
-      filter %>% 
-      filter(.,input$year==Year)  %>% summarize(., TotalPerYear = sum(Value), Highest = max(Value))
-  })
   
   foodrate = reactive({
     foodrate = fdjoined  %>% filter(.,input$YearSel==Year) 
@@ -43,13 +39,7 @@ shinyServer<- function(input, output) {
       rename( TotalCapVeggieKPY = Value) %>% select(-Variable,-Measure) })
 
 
-  output$box11 <- renderInfoBox({
-    #c_value <- max(cancerrate()$Value)
-   # c_state <- cancerrate()$Variable[c_value == toprate()$Value]
-    c_value = max(cancerrate()$Value)
-   # c_state = cancerrate()$Variable[c_value == cancerrate()$Value]
-    infoBox(c_value, c_value, icon = icon("brain"), color = "light-blue")
-  })
+
   output$box12 <- renderInfoBox({
     max_value <- max(toprate()$Value)
     max_state <- toprate()$Country[max_value == toprate()$Value]
@@ -80,18 +70,6 @@ shinyServer<- function(input, output) {
                                 ))
   })  
 
-  
-  
-  
-  
-  
-    
-  output$food1 = renderGvis({
-    gvisGeoChart(foodrate(), locationvar = "Country", colorvar = input$FoodSel,
-                 options = list(region="world", displayMode="auto",
-                                resolution="countries", width="100%", height="100%",
-                                colorAxis="{colors:['#6f92e6', '#f9897e']}"))
-  })   
 
   output$table = DT::renderDataTable({
     fdjoined
